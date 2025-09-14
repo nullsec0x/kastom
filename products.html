@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - Kastom Metal Bazaar</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Metal+Mania&family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="products-header">
+        <a href="index.html" class="logo-link">
+            <h1>KUSTOM METAL BAZAAR</h1>
+        </a>
+    </header>
+
+    <main class="products-main">
+        <div class="controls">
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="Search products...">
+            </div>
+            <div class="category-filters">
+                <button class="filter-btn active" data-category="all">All</button>
+                <button class="filter-btn" data-category="tshirt">T-Shirts</button>
+                <button class="filter-btn" data-category="hoodie">Hoodies</button>
+            </div>
+        </div>
+
+        <div class="products-grid" id="products-container">
+            <!-- Products will be dynamically inserted here -->
+        </div>
+    </main>
+
+    <!-- Cart Panel -->
+    <div class="cart-panel" id="cart-panel">
+        <div class="cart-header">
+            <h2>Your Cart</h2>
+            <button id="close-cart">&times;</button>
+        </div>
+        <div class="cart-items" id="cart-items">
+            <!-- Cart items will be inserted here -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                Total: <span id="cart-total-amount">MAD 0</span>
+            </div>
+            <button id="checkout-btn" class="checkout-button">Checkout</button>
+        </div>
+    </div>
+
+    <!-- Cart Toggle Button -->
+    <button id="cart-toggle" class="cart-toggle-button">
+        <span class="cart-icon">🛒</span>
+        <span class="cart-count" id="cart-count">0</span>
+    </button>
+
+    <!-- Checkout Modal -->
+    <div class="modal-overlay" id="checkout-modal">
+        <div class="modal-content">
+            <h2>Complete Your Order</h2>
+            <form id="checkout-form">
+                <div class="form-group">
+                    <label for="customer-name">Name</label>
+                    <input type="text" id="customer-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="customer-phone">Phone</label>
+                    <input type="tel" id="customer-phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="customer-address">Address</label>
+                    <textarea id="customer-address" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="order-notes">Notes</label>
+                    <textarea id="order-notes"></textarea>
+                </div>
+                <div class="order-summary">
+                    <h3>Order Summary</h3>
+                    <div id="order-summary-items"></div>
+                    <div class="order-total">
+                        Total: <span id="order-summary-total">MAD 0</span>
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <button type="button" id="cancel-checkout">Cancel</button>
+                    <button type="submit">Send via WhatsApp</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <span id="toast-message"></span>
+    </div>
+
+    <script src="js/products.js"></script>
+</body>
+</html>
